@@ -31,7 +31,7 @@
             style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Playstation 5" />
+            android:text="Product Name" />
 
         <TextView
             android:id="@+id/viewProductDescription"
