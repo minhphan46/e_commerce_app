@@ -17,21 +17,20 @@
             android:layout_height="120dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:background="#bababa"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="#bababa" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/viewProductName"
             app:layout_constraintStart_toEndOf="@id/productImage"
             app:layout_constraintTop_toTopOf="@id/productImage"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginStart="8dp"
             style="@style/TextAppearance.MaterialComponents.Headline5"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            app:layout_constrainedWidth="true"
             android:layout_height="wrap_content"
-            android:text="Product Name" />
+            android:text="Playstation 5"  />
 
         <TextView
             android:id="@+id/viewProductDescription"
@@ -74,6 +73,7 @@
             android:layout_marginBottom="16dp"
             android:text="Buy it!"
             />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
