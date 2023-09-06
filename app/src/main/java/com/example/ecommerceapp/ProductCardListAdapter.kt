@@ -1,5 +1,6 @@
 package com.example.ecommerceapp
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +17,7 @@ class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = View.inflate(parent.context, R.layout.product_card, null)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_card, parent, false)
         return ViewHolder(view)
     }
 
