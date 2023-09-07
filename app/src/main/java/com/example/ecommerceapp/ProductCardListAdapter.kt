@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ecommerceapp.databinding.ProductCardBinding
 
 class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
+    private var data: List<ProductCardViewState> = emptyList()
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind() {
+        fun bind(productCardViewState: ProductCardViewState) {
             val bind = ProductCardBinding.bind(itemView)
             bind.viewProductName.text = "Product 1"
             bind.viewProductDescription.text = "Description of product"
@@ -22,11 +24,15 @@ class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewH
     }
 
     override fun getItemCount(): Int {
-        return 10
+        return data.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind()
+        holder.bind(data[position])
+    }
+
+    fun setData(productsList: List<ProductCardViewState>) {
+        this.data = productsList
     }
 
 }
