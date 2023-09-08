@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.example.ecommerceapp.databinding.ProductCardBinding
 
 class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewHolder>() {
@@ -12,9 +14,15 @@ class ProductCardListAdapter : RecyclerView.Adapter<ProductCardListAdapter.ViewH
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(productCardViewState: ProductCardViewState) {
             val bind = ProductCardBinding.bind(itemView)
-            bind.viewProductName.text = "Product 1"
-            bind.viewProductDescription.text = "Description of product"
-            bind.productPrice.text = "100US$"
+            bind.apply {
+                viewProductName.text = productCardViewState.title
+                viewProductDescription.text = productCardViewState.description
+                productPrice.text = productCardViewState.price
+                Glide.with(productImage)
+                    .asBitmap()
+                    .load(productCardViewState.imageUrl)
+                    .into(BitmapImageViewTarget(productImage))
+            }
         }
     }
 
